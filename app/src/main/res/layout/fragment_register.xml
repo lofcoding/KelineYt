@@ -76,7 +76,7 @@
             app:layout_constraintEnd_toEndOf="@id/guidelineRegisterRight"
             app:layout_constraintTop_toBottomOf="@id/edFirstNameRegister"
             style="@style/editText"
-            android:hint="First Name"
+            android:hint="Last name"
             android:layout_marginTop="10dp"/>
 
         <EditText
@@ -103,7 +103,7 @@
             android:inputType="textPassword"
             android:layout_marginTop="10dp"/>
 
-        <androidx.appcompat.widget.AppCompatButton
+        <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
             android:id="@+id/buttonRegisterRegister"
             android:layout_width="0dp"
             android:layout_height="@dimen/mediumButtonHeight"
@@ -112,7 +112,8 @@
             app:layout_constraintStart_toStartOf="@id/guidelineRegisterLeft"
             app:layout_constraintEnd_toEndOf="@id/guidelineRegisterRight"
             android:layout_marginTop="15dp"
-            android:text="Register"/>
+            android:text="Register"
+            app:spinning_bar_color="@color/white"/>
 
         <ImageView
             android:id="@+id/facebookRegister"
