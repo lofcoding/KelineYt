@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
+import com.example.kelineyt.R
 import com.example.kelineyt.data.User
 import com.example.kelineyt.databinding.FragmentRegisterBinding
 import com.example.kelineyt.util.RegisterValidation
@@ -37,6 +39,10 @@ class RegisterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.tvDoYouHaveAccount.setOnClickListener {
+            findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
+        }
+
         binding.apply {
             buttonRegisterRegister.setOnClickListener {
                 val user = User(
@@ -56,7 +62,6 @@ class RegisterFragment : Fragment() {
                         binding.buttonRegisterRegister.startAnimation()
                     }
                     is Resource.Success -> {
-                        Log.d("test",it.data.toString())
                         binding.buttonRegisterRegister.revertAnimation()
                     }
                     is Resource.Error -> {
