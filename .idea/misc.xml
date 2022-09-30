@@ -7,18 +7,30 @@
         <entry key="..\:/Users/moham/KelineYt/app/src/main/res/drawable-v24/ic_ellipse.xml" value="0.1895" />
         <entry key="..\:/Users/moham/KelineYt/app/src/main/res/drawable-v24/ic_texture_left.xml" value="0.1895" />
         <entry key="..\:/Users/moham/KelineYt/app/src/main/res/drawable/blue_background.xml" value="0.1895" />
+        <entry key="..\:/Users/moham/KelineYt/app/src/main/res/drawable/bottom_nav_item_background.xml" value="0.2635" />
+        <entry key="..\:/Users/moham/KelineYt/app/src/main/res/drawable/bottom_navigation_background.xml" value="0.2635" />
+        <entry key="..\:/Users/moham/KelineYt/app/src/main/res/drawable/ic_cart.xml" value="0.3105" />
+        <entry key="..\:/Users/moham/KelineYt/app/src/main/res/drawable/ic_home.xml" value="0.3105" />
         <entry key="..\:/Users/moham/KelineYt/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2225" />
         <entry key="..\:/Users/moham/KelineYt/app/src/main/res/drawable/white_background.xml" value="0.2225" />
         <entry key="..\:/Users/moham/KelineYt/app/src/main/res/layout-land/fragment_introduction.xml" value="0.3612654980761009" />
+        <entry key="..\:/Users/moham/KelineYt/app/src/main/res/layout-large/fragment_cart.xml" value="0.3009833262077811" />
         <entry key="..\:/Users/moham/KelineYt/app/src/main/res/layout-large/fragment_introduction.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/moham/KelineYt/app/src/main/res/layout-large/fragment_profile.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/moham/KelineYt/app/src/main/res/layout-large/fragment_search.xml" value="0.3009833262077811" />
         <entry key="..\:/Users/moham/KelineYt/app/src/main/res/layout/actitivty_login_register.xml" value="0.22" />
         <entry key="..\:/Users/moham/KelineYt/app/src/main/res/layout/activity_shopping.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/moham/KelineYt/app/src/main/res/layout/fragment_account_options.xml" value="0.33" />
+        <entry key="..\:/Users/moham/KelineYt/app/src/main/res/layout/fragment_cart.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/moham/KelineYt/app/src/main/res/layout/fragment_home.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/moham/KelineYt/app/src/main/res/layout/fragment_introdcution.xml" value="0.2" />
         <entry key="..\:/Users/moham/KelineYt/app/src/main/res/layout/fragment_introduction.xml" value="0.25" />
         <entry key="..\:/Users/moham/KelineYt/app/src/main/res/layout/fragment_login.xml" value="0.25" />
+        <entry key="..\:/Users/moham/KelineYt/app/src/main/res/layout/fragment_profile.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/moham/KelineYt/app/src/main/res/layout/fragment_register.xml" value="0.25" />
+        <entry key="..\:/Users/moham/KelineYt/app/src/main/res/layout/fragment_search.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/moham/KelineYt/app/src/main/res/layout/reset_passowrd_dialog.xml" value="0.33" />
+        <entry key="..\:/Users/moham/KelineYt/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>

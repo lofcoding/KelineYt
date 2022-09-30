@@ -53,6 +53,11 @@ dependencies {
 
     apply plugin :"kotlin-kapt"
 
+    //Navigation component
+    def nav_version = "2.5.2"
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
     //loading button
     implementation 'br.com.simplepass:loading-button-android:2.2.0'
 
