@@ -9,8 +9,11 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kelineyt.R
+import com.example.kelineyt.adapters.BestDealsAdapter
+import com.example.kelineyt.adapters.BestProductsAdapter
 import com.example.kelineyt.adapters.SpecialProductsAdapter
 import com.example.kelineyt.databinding.FragmentHomeBinding
 import com.example.kelineyt.databinding.FragmentMainCategoryBinding
@@ -20,10 +23,13 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 
 private val TAG = "MainCategoryFragment"
+
 @AndroidEntryPoint
 class MainCategoryFragment : Fragment(R.layout.fragment_main_category) {
     private lateinit var binding: FragmentMainCategoryBinding
     private lateinit var specialProductsAdapter: SpecialProductsAdapter
+    private lateinit var bestDealsAdapter: BestDealsAdapter
+    private lateinit var bestProductsAdapter: BestProductsAdapter
     private val viewModel by viewModels<MainCategoryViewModel>()
 
     override fun onCreateView(
@@ -39,6 +45,8 @@ class MainCategoryFragment : Fragment(R.layout.fragment_main_category) {
         super.onViewCreated(view, savedInstanceState)
 
         setupSpecialProductsRv()
+        setupBestDealsRv()
+        setupBestProducts()
         lifecycleScope.launchWhenStarted {
             viewModel.specialProducts.collectLatest {
                 when (it) {
@@ -51,12 +59,70 @@ class MainCategoryFragment : Fragment(R.layout.fragment_main_category) {
                     }
                     is Resource.Error -> {
                         hideLoading()
-                        Log.e(TAG,it.message.toString())
+                        Log.e(TAG, it.message.toString())
                         Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
                     }
                     else -> Unit
                 }
             }
+        }
+
+        lifecycleScope.launchWhenStarted {
+            viewModel.bestDealsProducts.collectLatest {
+                when (it) {
+                    is Resource.Loading -> {
+                        showLoading()
+                    }
+                    is Resource.Success -> {
+                        bestDealsAdapter.differ.submitList(it.data)
+                        hideLoading()
+                    }
+                    is Resource.Error -> {
+                        hideLoading()
+                        Log.e(TAG, it.message.toString())
+                        Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+                    }
+                    else -> Unit
+                }
+            }
+        }
+
+        lifecycleScope.launchWhenStarted {
+            viewModel.bestProducts.collectLatest {
+                when (it) {
+                    is Resource.Loading -> {
+                        showLoading()
+                    }
+                    is Resource.Success -> {
+                        bestProductsAdapter.differ.submitList(it.data)
+                        hideLoading()
+                    }
+                    is Resource.Error -> {
+                        hideLoading()
+                        Log.e(TAG, it.message.toString())
+                        Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+                    }
+                    else -> Unit
+                }
+            }
+        }
+    }
+
+    private fun setupBestProducts() {
+        bestProductsAdapter = BestProductsAdapter()
+        binding.rvBestProducts.apply {
+            layoutManager =
+                GridLayoutManager(requireContext(), 2, GridLayoutManager.VERTICAL, false)
+            adapter = bestProductsAdapter
+        }
+    }
+
+    private fun setupBestDealsRv() {
+        bestDealsAdapter = BestDealsAdapter()
+        binding.rvBestDealsProducts.apply {
+            layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            adapter = bestDealsAdapter
         }
     }
 
