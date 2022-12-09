@@ -60,6 +60,18 @@
             android:overScrollMode="never" />
 
 
+        <ProgressBar
+            android:id="@+id/bestProductsProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/g_blue_gray200"
+            app:layout_constraintTop_toBottomOf="@id/rvBestProducts"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="gone"
+            />
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
