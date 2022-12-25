@@ -139,7 +139,7 @@
                     android:text="Size" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvSize"
+                    android:id="@+id/rv_sizes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </LinearLayout>
@@ -157,7 +157,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginTop="45dp"
             android:layout_marginBottom="20dp"
-            android:text="Login"
+            android:text="Add to cart"
             app:spinning_bar_color="@color/white"/>
 
 
