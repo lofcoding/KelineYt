@@ -42,9 +42,8 @@
             android:textSize="15sp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@id/imageCartProduct"
-            app:layout_constraintTop_toTopOf="@id/imageCartProduct"/>
-
-
+            app:layout_constraintTop_toTopOf="@id/imageCartProduct"
+            android:lines="1" />
 
 
 
