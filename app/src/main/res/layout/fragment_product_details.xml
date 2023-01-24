@@ -82,7 +82,7 @@
             android:text="$6000"/>
 
         <View
-            android:id="@+id/line"
+            android:id="@+id/topLine"
             android:layout_width="0dp"
             android:layout_height="1dp"
             android:background="@color/g_line"
@@ -98,9 +98,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintStart_toStartOf="@id/line"
-            app:layout_constraintEnd_toEndOf="@id/line"
-            app:layout_constraintTop_toBottomOf="@id/line"
+            app:layout_constraintStart_toStartOf="@id/topLine"
+            app:layout_constraintEnd_toEndOf="@id/topLine"
+            app:layout_constraintTop_toBottomOf="@id/topLine"
             android:layout_marginTop="30dp">
 
             <LinearLayout
