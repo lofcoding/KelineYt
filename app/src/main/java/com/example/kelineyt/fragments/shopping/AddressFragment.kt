@@ -55,7 +55,7 @@ class AddressFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentAddressBinding.inflate(inflater)
         return binding.root
     }
