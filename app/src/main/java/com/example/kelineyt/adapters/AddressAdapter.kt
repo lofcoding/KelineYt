@@ -62,7 +62,7 @@ class AddressAdapter : Adapter<AddressAdapter.AddressViewHolder>() {
             onClick?.invoke(address)
         }
     }
-
+//
     init {
         differ.addListListener { _, _ ->
             notifyItemChanged(selectedAddress)
