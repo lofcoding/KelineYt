@@ -21,7 +21,6 @@ import com.example.kelineyt.util.VerticalItemDecoration
 import com.example.kelineyt.viewmodel.CartViewModel
 import kotlinx.coroutines.flow.collectLatest
 
-
 class CartFragment : Fragment(R.layout.fragment_cart) {
     private lateinit var binding: FragmentCartBinding
     private val cartAdapter by lazy { CartProductAdapter() }

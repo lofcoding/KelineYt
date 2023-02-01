@@ -37,4 +37,5 @@ class BillingViewModel @Inject constructor(
                 viewModelScope.launch { _address.emit(Resource.Success(addresses!!)) }
             }
     }
+
 }
