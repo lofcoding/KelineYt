@@ -14,8 +14,8 @@
             android:id="@+id/toolbarBilling"
             android:layout_width="0dp"
             android:layout_height="?actionBarSize"
-            app:layout_constraintEnd_toEndOf="@id/guideline2"
-            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintEnd_toEndOf="@id/rightGuideline"
+            app:layout_constraintStart_toStartOf="@id/leftGuideline"
             app:layout_constraintTop_toTopOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -54,7 +54,7 @@
             android:fontFamily="@font/poppins_thin"
             android:textStyle="bold"
             app:layout_constraintTop_toBottomOf="@id/toolbarBilling"
-            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintStart_toStartOf="@id/leftGuideline"
             android:textColor="@color/black"
             android:textSize="15sp"
             android:layout_marginTop="10dp"/>
@@ -66,8 +66,8 @@
             android:text="Keline dose not support virtual payments. You can pay when you receive your order."
             android:fontFamily="@font/sf_pro_display"
             app:layout_constraintTop_toBottomOf="@id/tvPaymentMethods"
-            app:layout_constraintStart_toStartOf="@id/guideline1"
-            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintStart_toStartOf="@id/leftGuideline"
+            app:layout_constraintEnd_toEndOf="@id/rightGuideline"
             android:textColor="@color/black"
             android:textSize="15sp" />
 
@@ -78,8 +78,8 @@
             android:layout_marginTop="15dp"
             android:background="@drawable/white_background"
             app:layout_constraintTop_toBottomOf="@id/tvPaymentExplanation"
-            app:layout_constraintStart_toStartOf="@id/guideline1"
-            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintStart_toStartOf="@id/leftGuideline"
+            app:layout_constraintEnd_toEndOf="@id/rightGuideline"
             android:backgroundTint="@color/g_blue_gray200"
             />
 
@@ -89,7 +89,7 @@
             android:layout_height="wrap_content"
             android:text="Shipping Address"
             android:fontFamily="@font/poppins_thin"
-            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintStart_toStartOf="@id/leftGuideline"
             android:textColor="@color/black"
             android:textSize="15sp"
             android:layout_marginTop="10dp"
@@ -101,7 +101,7 @@
             android:id="@+id/imageAddAddress"
             android:layout_width="15dp"
             android:layout_height="15dp"
-            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintEnd_toEndOf="@id/rightGuideline"
             app:layout_constraintTop_toTopOf="@id/tvShoppingAddress"
             app:layout_constraintBottom_toBottomOf="@id/tvShoppingAddress"
             android:src="@drawable/ic_add"
@@ -112,7 +112,7 @@
             android:id="@+id/rvFrame"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintStart_toStartOf="@id/leftGuideline"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvShoppingAddress">
 
@@ -142,8 +142,8 @@
             android:layout_marginTop="15dp"
             android:background="@drawable/white_background"
             app:layout_constraintTop_toBottomOf="@id/rvFrame"
-            app:layout_constraintStart_toStartOf="@id/guideline1"
-            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintStart_toStartOf="@id/leftGuideline"
+            app:layout_constraintEnd_toEndOf="@id/rightGuideline"
             android:backgroundTint="@color/g_blue_gray200"
             />
 
@@ -154,7 +154,7 @@
             android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintStart_toStartOf="@id/leftGuideline"
             app:layout_constraintTop_toBottomOf="@id/middleLine"
             tools:listitem="@layout/billing_products_rv_item"
             android:orientation="horizontal"
@@ -167,8 +167,8 @@
             android:layout_marginTop="15dp"
             android:background="@drawable/white_background"
             app:layout_constraintTop_toBottomOf="@id/rvProducts"
-            app:layout_constraintStart_toStartOf="@id/guideline1"
-            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintStart_toStartOf="@id/leftGuideline"
+            app:layout_constraintEnd_toEndOf="@id/rightGuideline"
             android:backgroundTint="@color/g_blue_gray200"
             />
 
@@ -179,8 +179,8 @@
             android:layout_marginTop="50dp"
             android:background="@drawable/total_box_background"
             app:layout_constraintTop_toBottomOf="@id/rvProducts"
-            app:layout_constraintStart_toStartOf="@id/guideline1"
-            app:layout_constraintEnd_toEndOf="@id/guideline2">
+            app:layout_constraintStart_toStartOf="@id/leftGuideline"
+            app:layout_constraintEnd_toEndOf="@id/rightGuideline">
 
 
             <TextView
@@ -232,14 +232,14 @@
 
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline1"
+            android:id="@+id/leftGuideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.04" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline2"
+            android:id="@+id/rightGuideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"

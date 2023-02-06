@@ -7,8 +7,8 @@
         android:id="@+id/toolbarAddresses"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="@id/guideline2"
-        app:layout_constraintStart_toStartOf="@id/guideline1"
+        app:layout_constraintEnd_toEndOf="@id/rightGuideline"
+        app:layout_constraintStart_toStartOf="@id/leftGuideline"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -47,8 +47,8 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/white_background"
         android:backgroundTint="@color/g_blue_gray200"
-        app:layout_constraintEnd_toEndOf="@id/guideline2"
-        app:layout_constraintStart_toStartOf="@id/guideline1"
+        app:layout_constraintEnd_toEndOf="@id/rightGuideline"
+        app:layout_constraintStart_toStartOf="@id/leftGuideline"
         app:layout_constraintTop_toBottomOf="@id/toolbarAddresses" />
 
     <EditText
@@ -64,8 +64,8 @@
         android:paddingEnd="20dp"
         android:singleLine="true"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@id/guideline2"
-        app:layout_constraintStart_toStartOf="@id/guideline1"
+        app:layout_constraintEnd_toEndOf="@id/rightGuideline"
+        app:layout_constraintStart_toStartOf="@id/leftGuideline"
         app:layout_constraintTop_toBottomOf="@+id/topLine" />
 
     <EditText
@@ -81,8 +81,8 @@
         android:paddingEnd="20dp"
         android:singleLine="true"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@id/guideline2"
-        app:layout_constraintStart_toStartOf="@id/guideline1"
+        app:layout_constraintEnd_toEndOf="@id/rightGuideline"
+        app:layout_constraintStart_toStartOf="@id/leftGuideline"
         app:layout_constraintTop_toBottomOf="@+id/edAddressTitle" />
 
     <EditText
@@ -98,8 +98,8 @@
         android:paddingEnd="20dp"
         android:singleLine="true"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@id/guideline2"
-        app:layout_constraintStart_toStartOf="@id/guideline1"
+        app:layout_constraintEnd_toEndOf="@id/rightGuideline"
+        app:layout_constraintStart_toStartOf="@id/leftGuideline"
         app:layout_constraintTop_toBottomOf="@id/edFullName" />
 
     <LinearLayout
@@ -107,9 +107,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintEnd_toEndOf="@id/rightGuideline"
         app:layout_constraintHorizontal_bias="0.484"
-        app:layout_constraintStart_toStartOf="@id/guideline1"
+        app:layout_constraintStart_toStartOf="@id/leftGuideline"
         app:layout_constraintTop_toBottomOf="@+id/edPhone">
 
         <EditText
@@ -159,8 +159,8 @@
         android:phoneNumber="true"
         android:singleLine="true"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintEnd_toStartOf="@+id/rightGuideline"
+        app:layout_constraintStart_toStartOf="@+id/leftGuideline"
         app:layout_constraintTop_toBottomOf="@+id/edStreet" />
 
     <LinearLayout
@@ -168,9 +168,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="45dp"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintEnd_toEndOf="@id/rightGuideline"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@id/guideline1"
+        app:layout_constraintStart_toStartOf="@id/leftGuideline"
         app:layout_constraintTop_toBottomOf="@id/linear"
         app:layout_constraintVertical_bias="0.494">
 
@@ -217,14 +217,14 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline1"
+        android:id="@+id/leftGuideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.04136253" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
+        android:id="@+id/rightGuideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
