@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/shopping_graph"
-    app:startDestination="@id/userAccountFragment">
+    app:startDestination="@id/ordersFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -79,4 +79,8 @@
         android:id="@+id/userAccountFragment"
         android:name="com.example.kelineyt.fragments.settings.UserAccountFragment"
         android:label="UserAccountFragment" />
+    <fragment
+        android:id="@+id/ordersFragment"
+        android:name="com.example.kelineyt.fragments.settings.AllOrdersFragment"
+        android:label="OrdersFragment" />
 </navigation>
