@@ -82,5 +82,17 @@
     <fragment
         android:id="@+id/ordersFragment"
         android:name="com.example.kelineyt.fragments.settings.AllOrdersFragment"
-        android:label="OrdersFragment" />
+        android:label="OrdersFragment" >
+        <action
+            android:id="@+id/action_ordersFragment_to_orderDetailFragment"
+            app:destination="@id/orderDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderDetailFragment"
+        android:name="com.example.kelineyt.fragments.settings.OrderDetailFragment"
+        android:label="OrderDetailFragment" >
+        <argument
+            android:name="order"
+            app:argType="com.example.kelineyt.data.order.Order" />
+    </fragment>
 </navigation>
