@@ -14,6 +14,7 @@ import com.example.kelineyt.data.order.getOrderStatus
 import com.example.kelineyt.databinding.FragmentOrderDetailBinding
 import com.example.kelineyt.databinding.FragmentOrdersBinding
 import com.example.kelineyt.util.VerticalItemDecoration
+import com.example.kelineyt.util.hideBottomNavigationView
 
 class OrderDetailFragment : Fragment() {
     private lateinit var binding: FragmentOrderDetailBinding
@@ -33,6 +34,7 @@ class OrderDetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val order = args.order
+        hideBottomNavigationView()
 
         setupOrderRv()
 

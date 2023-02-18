@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.kelineyt.adapters.AllOrdersAdapter
 import com.example.kelineyt.databinding.FragmentOrdersBinding
 import com.example.kelineyt.util.Resource
+import com.example.kelineyt.util.hideBottomNavigationView
 import com.example.kelineyt.viewmodel.AllOrdersViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest

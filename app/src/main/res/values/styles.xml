@@ -70,4 +70,19 @@
     </style>
 
 
+
+    <style name="BigTextViewThin">
+        <item name="android:textColor">#4b4f60</item>
+        <item name="android:textSize">20sp</item>
+        <item name="fontFamily">@font/poppins_thin</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="SmallTextViewThin">
+        <item name="android:textColor">@color/g_gray700</item>
+        <item name="android:textSize">10sp</item>
+        <item name="fontFamily">@font/sf_pro_display</item>
+    </style>
+
 </resources>
