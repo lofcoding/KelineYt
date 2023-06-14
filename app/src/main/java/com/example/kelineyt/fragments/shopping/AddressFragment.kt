@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.kelineyt.data.Address
 import com.example.kelineyt.databinding.FragmentAddressBinding
 import com.example.kelineyt.util.Resource
@@ -21,23 +22,26 @@ import kotlinx.coroutines.flow.collectLatest
 class AddressFragment : Fragment() {
     private lateinit var binding: FragmentAddressBinding
     val viewModel by viewModels<AddressViewModel>()
+    val args by navArgs<AddressFragmentArgs>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         lifecycleScope.launchWhenStarted {
             viewModel.addNewAddress.collectLatest {
                 when (it) {
                     is Resource.Loading -> {
                         binding.progressbarAddress.visibility = View.VISIBLE
                     }
-                    is Resource.Success ->{
+
+                    is Resource.Success -> {
                         binding.progressbarAddress.visibility = View.INVISIBLE
                         findNavController().navigateUp()
                     }
-                    is Resource.Error ->{
+
+                    is Resource.Error -> {
                         Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
                     }
+
                     else -> Unit
                 }
             }
@@ -54,7 +58,7 @@ class AddressFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         binding = FragmentAddressBinding.inflate(inflater)
         return binding.root
@@ -62,6 +66,20 @@ class AddressFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val address = args.address
+        if (address == null) {
+            binding.buttonDelelte.visibility = View.GONE
+        } else {
+            binding.apply {
+                edAddressTitle.setText(address.addressTitle)
+                edFullName.setText(address.fullName)
+                edState.setText(address.street)
+                edPhone.setText(address.phone)
+                edCity.setText(address.city)
+                edState.setText(address.state)
+            }
+        }
 
         binding.apply {
             buttonSave.setOnClickListener {
@@ -76,6 +94,8 @@ class AddressFragment : Fragment() {
                 viewModel.addAddress(address)
             }
         }
+
+
     }
 
 }

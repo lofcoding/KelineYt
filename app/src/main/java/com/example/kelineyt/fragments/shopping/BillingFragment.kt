@@ -53,7 +53,7 @@ class BillingFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         binding = FragmentBillingBinding.inflate(inflater)
         return binding.root
@@ -65,8 +65,26 @@ class BillingFragment : Fragment() {
         setupBillingProductsRv()
         setupAddressRv()
 
+
+        if (!args.payment) {
+            binding.apply {
+                buttonPlaceOrder.visibility = View.INVISIBLE
+                totalBoxContainer.visibility = View.INVISIBLE
+                middleLine.visibility = View.INVISIBLE
+                bottomLine.visibility = View.INVISIBLE
+            }
+        }
+
         binding.imageAddAddress.setOnClickListener {
             findNavController().navigate(R.id.action_billingFragment_to_addressFragment)
+        }
+
+        addressAdapter.onClick = {
+            selectedAddress = it
+            if (!args.payment) {
+                val b = Bundle().apply { putParcelable("address", selectedAddress) }
+                findNavController().navigate(R.id.action_billingFragment_to_addressFragment, b)
+            }
         }
 
         lifecycleScope.launchWhenStarted {
@@ -75,15 +93,18 @@ class BillingFragment : Fragment() {
                     is Resource.Loading -> {
                         binding.progressbarAddress.visibility = View.VISIBLE
                     }
+
                     is Resource.Success -> {
                         addressAdapter.differ.submitList(it.data)
                         binding.progressbarAddress.visibility = View.GONE
                     }
+
                     is Resource.Error -> {
                         binding.progressbarAddress.visibility = View.GONE
                         Toast.makeText(requireContext(), "Error ${it.message}", Toast.LENGTH_SHORT)
                             .show()
                     }
+
                     else -> Unit
                 }
             }
@@ -96,16 +117,20 @@ class BillingFragment : Fragment() {
                     is Resource.Loading -> {
                         binding.buttonPlaceOrder.startAnimation()
                     }
+
                     is Resource.Success -> {
                         binding.buttonPlaceOrder.revertAnimation()
                         findNavController().navigateUp()
-                        Snackbar.make(requireView(),"Your order was placed",Snackbar.LENGTH_LONG).show()
+                        Snackbar.make(requireView(), "Your order was placed", Snackbar.LENGTH_LONG)
+                            .show()
                     }
+
                     is Resource.Error -> {
                         binding.buttonPlaceOrder.revertAnimation()
                         Toast.makeText(requireContext(), "Error ${it.message}", Toast.LENGTH_SHORT)
                             .show()
                     }
+
                     else -> Unit
                 }
             }
@@ -117,9 +142,6 @@ class BillingFragment : Fragment() {
 
         binding.tvTotalPrice.text = "$ $totalPrice"
 
-        addressAdapter.onClick = {
-            selectedAddress = it
-        }
 
         binding.buttonPlaceOrder.setOnClickListener {
             if (selectedAddress == null) {
