@@ -33,7 +33,7 @@ class DetailsViewModel @Inject constructor(
                         addNewProduct(cartProduct)
                     } else {
                         val product = it.first().toObject(CartProduct::class.java)
-                        if (product.product == cartProduct.product) { //Increase the quantity (fixed quantity increasement issue)
+                        if(product.product == cardProduct.product && product.selectedColor == cardProduct.selectedColor && product.selectedSize== cardProduct.selectedSize){ //Increase the quantity (fixed quantity increasement issue)
                             val documentId = it.first().id
                             increaseQuantity(documentId, cartProduct)
                         } else { //Add new product
